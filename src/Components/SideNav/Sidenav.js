@@ -217,34 +217,34 @@ const Sidenav = (props) => {
             <article className={!props.setOpen ? "article-reader" : "notopen"} >
                 <Switch>
                     <Route path="/" exact={true}>
-                        <Intro />
+                        <Intro index={index} setIndex={setIndex} setIndex2={setIndex2} />
                     </Route>
                     <Route path="/history" exact={true}>
-                        <History />
+                        <History index={index} setIndex={setIndex} setIndex2={setIndex2} />
                     </Route>
                     <Route path="/install" exact={true}>
-                        <Install />
+                        <Install index={index} setIndex={setIndex} setIndex2={setIndex2} />
                     </Route>
                     <Route path="/need" exact={true}>
-                        <Need />
+                        <Need index={index} setIndex={setIndex} setIndex2={setIndex2} />
                     </Route>
                     <Route path="/differences" exact={true}>
-                        <Differences />
+                        <Differences index={index} index2={index2} setIndex={setIndex} setIndex2={setIndex2} />
                     </Route>
                     <Route path="/engine" exact={true}>
-                        <Engine />
+                        <Engine index2={index2} setIndex={setIndex} setIndex2={setIndex2} />
                     </Route>
                     <Route path="/command" exact={true}>
-                        <Command />
+                        <Command index2={index2} setIndex={setIndex} setIndex2={setIndex2} />
                     </Route>
                     <Route path="/exit" exact={true}>
-                        <Exit />
+                        <Exit index2={index2} setIndex={setIndex} setIndex2={setIndex2} />
                     </Route>
                     <Route path="/variables" exact={true}>
-                        <Variables />
+                        <Variables index2={index2} setIndex={setIndex} setIndex2={setIndex2} />
                     </Route>
                     <Route path="/useNode" exact={true}>
-                        <Usenode />
+                        <Usenode index2={index2} setIndex={setIndex} setIndex2={setIndex2} />
                     </Route>
                 </Switch>
             </article>

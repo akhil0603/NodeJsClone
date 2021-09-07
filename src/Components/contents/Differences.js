@@ -1,80 +1,122 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
-const Differences = () => {
+const Differences = ({ index, setIndex, setIndex2, index2 }) => {
     return (
         <div>
             <h1 className="article-reader-headline">Differences between Node.js and the Browser</h1>
-            <details className='toc' open>
-                <summary>
-                    <h6>TABLE OF CONTENTS</h6>
-                </summary>
-                <ul className="tableOfContents">
-                    <li>
-                        <a href="https://nodejs.dev/learn/a-brief-history-of-nodejs/#a-little-bit-of-history">A little bit of history</a>
-                    </li>
-                    <li>
-                        <a href="https://nodejs.dev/learn/a-brief-history-of-nodejs/#2009">2009</a>
-                    </li>
-                    <li>
-                        <a href="https://nodejs.dev/learn/a-brief-history-of-nodejs/#2010">2010</a>
-                    </li>
-                    <li>
-                        <a href="https://nodejs.dev/learn/a-brief-history-of-nodejs/#2011">2011</a>
-                    </li>
-                    <li>
-                        <a href="https://nodejs.dev/learn/a-brief-history-of-nodejs/#2012">2012</a>
-                    </li>
-                    <li>
-                        <a href="https://nodejs.dev/learn/a-brief-history-of-nodejs/#2013">2013</a>
-                    </li>
-                    <li>
-                        <a href="https://nodejs.dev/learn/a-brief-history-of-nodejs/#2014">2014</a>
-                    </li>
-                    <li>
-                        <a href="https://nodejs.dev/learn/a-brief-history-of-nodejs/#2015">2015</a>
-                    </li>
-                    <li>
-                        <a href="https://nodejs.dev/learn/a-brief-history-of-nodejs/#2016">2016</a>
-                    </li>
-                    <li>
-                        <a href="https://nodejs.dev/learn/a-brief-history-of-nodejs/#2017">2017</a>
-                    </li>
-                    <li>
-                        <a href="https://nodejs.dev/learn/a-brief-history-of-nodejs/#2018">2018</a>
-                    </li>
-                    <li>
-                        <a href="https://nodejs.dev/learn/a-brief-history-of-nodejs/#2019">2019</a>
-                    </li>
-                    <li>
-                        <a href="https://nodejs.dev/learn/a-brief-history-of-nodejs/#2020">2020</a>
-                    </li>
-                    <li>
-                        <a href="https://nodejs.dev/learn/a-brief-history-of-nodejs/#2021">2021</a>
-                    </li>
 
-
-                </ul>
-            </details>
             <div className="para">
                 <p>
-                    Believe it or not, Node.js is only eleven years old.
+                    Both the browser and Node.js use JavaScript as their programming language.
                 </p>
                 <p>
-                    In comparison, JavaScript is 24 years old and the Web is 31 years old.
+                    Building apps that run in the browser is a completely different thing than building a Node.js application.
                 </p>
                 <p>
-                    Eleven years isn't a very long time in tech, but Node.js seems to have been around forever.
+                    Despite the fact that it's always JavaScript, there are some key differences that make the experience radically different.
                 </p>
                 <p>
-                    I've had the pleasure to work with Node.js since the early days when it was only 2 years old, and despite the limited information in the wild, you could already feel that it was going to be a huge thing.
+                    From the perspective of a frontend developer who extensively uses JavaScript, Node.js apps bring with them a huge advantage: the comfort of programming everything - the frontend and the backend - in a single language.
                 </p>
                 <p>
-                    In this post, we draw the big picture of Node.js in its history, to put things in perspective.
+                    You have a huge opportunity because we know how hard it is to fully, deeply learn a programming language, and by using the same language to perform all your work on the web - both on the client and on the server, you're in a unique position of advantage.
                 </p>
                 <p>
-                    In Node.js the new ECMAScript standards can be used without problems, as you don't have to wait for all your users to update their browsers - you are in charge of deciding which ECMAScript version to use by changing the Node.js version, and you can also enable specific experimental features by running Node.js with flags.
+                    What changes is the ecosystem.
                 </p>
+                <p>
+                    In the browser, most of the time what you are doing is interacting with the DOM, or other Web Platform APIs like Cookies. Those do not exist in Node.js, of course. You don't have the <code className="language-text">document</code>, <code className="language-text">window</code>and all the other objects that are provided by the browser.
+                </p>
+                <p>
+                    And in the browser, we don't have all the nice APIs that Node.js provides through its modules, like the filesystem access functionality.
+                </p>
+                <p>
+                    Another big difference is that in Node.js you control the environment. Unless you are building an open source application that anyone can deploy anywhere, you know which version of Node.js you will run the application on. Compared to the browser environment, where you don't get the luxury to choose what browser your visitors will use, this is very convenient.
+                </p>
+                <p>
+                    This means that you can write all the modern ES6-7-8-9 JavaScript that your Node.js version supports.
+                </p>
+                <p>
+                    Since JavaScript moves so fast, but browsers can be a bit slow to upgrade, sometimes on the web you are stuck with using older JavaScript / ECMAScript releases.
+                </p>
+                <p>
+                    You can use Babel to transform your code to be ES5-compatible before shipping it to the browser, but in Node.js, you won't need that.
+                </p>
+                <p>
+                    Another difference is that Node.js uses the CommonJS module system, while in the browser we are starting to see the ES Modules standard being implemented.
+                </p>
+                <p>
+                    In practice, this means that for the time being you use <code className="language-text">require ( )</code> in Node.js and <code className="language-text">import</code> in the browser.
+                </p>
+
+                <ul className="list1">
+                    <h5>Contributors</h5>
+                    <li>
+                        <a className="link" href="https://github.com/flaviocopes" title="flaviocopes" target="_blank" rel="noopener noreferrer">
+                            <img className="img" src="https://github.com/flaviocopes.png?size=60" alt='flaviocopes'></img>
+
+                        </a>
+                        <a className="link" href="https://github.com/ZYSzys" title="ZYSzys" target="_blank" rel="noopener noreferrer">
+                            <img className="img" src="https://github.com/MylesBorins.png?size=60" alt='ZYSzys'></img>
+
+                        </a>
+                        <a className="link" href="https://github.com/ZYSzys" title="ZYSzys" target="_blank" rel="noopener noreferrer">
+                            <img className="img" src="https://github.com/RomainLanz.png?size=60" alt='ZYSzys'></img>
+
+                        </a>
+                        <a className="link" href="https://github.com/ZYSzys" title="ZYSzys" target="_blank" rel="noopener noreferrer">
+                            <img className="img" src="https://github.com/virkt25.png?size=60" alt='ZYSzys'></img>
+
+                        </a>
+                        <a className="link" href="https://github.com/ZYSzys" title="ZYSzys" target="_blank" rel="noopener noreferrer">
+                            <img className="img" src="https://github.com/Trott.png?size=60" alt='ZYSzys'></img>
+
+                        </a>
+                        <a className="link" href="https://github.com/ZYSzys" title="ZYSzys" target="_blank" rel="noopener noreferrer">
+                            <img className="img" src="https://github.com/onel0p3z.png?size=60" alt='ZYSzys'></img>
+
+                        </a>
+
+                    </li>
+                </ul>
+
+                <div className="edit">
+                    <a className="link" href="https://github.com/nodejs/nodejs.dev/edit/main/src/documentation/0004-node-javascript-language/index.md">
+                        <span>EDIT THIS PAGE ON GITHUB </span>
+                        <svg class="icon" fill="currentColor" height="1em" width="1em" viewBox="0 0 40 40"><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></svg>
+                    </a>
+                </div>
+
+
+
             </div>
+            <ul className="pagination">
+                <li>
+                    <Link class="link" rel="prev" to={'/need'} onClick={
+                        () => {
+                            setIndex2("")
+                            setIndex(index - 1)
+                            window.scrollTo({
+                                top: 0,
+                                behavior: "smooth"
+                            });
+
+                        }}>← &nbsp; Prev</Link>
+                </li>
+                <li>
+                    <Link class="link" rel="next" to={'/Engine'} onClick={
+                        () => {
+                            setIndex2(0)
+                            setIndex(5)
+                            window.scrollTo({
+                                top: 0,
+                                behavior: "smooth"
+                            });
+                        }}
+                    >Next &nbsp; →</Link>
+                </li>
+            </ul>
         </div>
     )
 }

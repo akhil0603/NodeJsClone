@@ -51,6 +51,12 @@ header {
       cursor: pointer;    
 
 }
+.list li a {
+
+       text-decoration: none;
+       color: var(--font-color);
+        
+}
 .li {
  
   border-bottom: solid 4px ;
@@ -134,7 +140,6 @@ header {
   border-color: rgb(132,186,100);
 }
 
- 
  /* .toc summary::marker{
 
       unicode-bidi: isolate;

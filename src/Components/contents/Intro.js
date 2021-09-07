@@ -1,7 +1,38 @@
-import React from 'react'
+import React, { useState } from 'react'
 import IntroImg from "../../images/intro.PNG"
+import { Link } from "react-router-dom";
 
-const Intro = () => {
+const Intro = ({ index, setIndex, setIndex2 }) => {
+    const [tick, setTick] = useState(false);
+
+    function copyCodeToClipboard() {
+        console.log("copy")
+        const el = document.getElementById("copy");
+        console.log(el);
+        const textArea = document.createElement("textarea");
+        textArea.value = el.textContent;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand("copy");
+        textArea.remove();
+
+    }
+
+    function buttonTicked() {
+        console.log("tick")
+        // const ticked = document.getElementById("tickable");
+        // ticked.classList.add("buttonticked");
+        setTick(true)
+        setTimeout(function () {
+
+            setTick(false)
+
+        }, 3000);
+
+
+
+
+    }
     return (
         <>
             <h1 className="article-reader-headline">Introduction to Node.js</h1>
@@ -66,7 +97,38 @@ const Intro = () => {
                 <p>
                     This code first includes the Node.js <code className="language-text">http</code><a href="https://nodejs.org/api/http.html">module</a>.
                 </p>
-
+                <p>
+                    Node.js has a fantastic <a href="https://nodejs.org/api/.html">standard library</a>, including first-class support for networking.
+                </p>
+                <p>
+                    The <code className="language-text">createServer()</code> method of <code className="language-text">http</code> creates a new HTTP server and returns it.
+                </p>
+                <p>
+                    Whenever a new request is received, the <code className="language-text">request</code><a href="https://nodejs.org/api/http.html#http_event_request">event</a> is called, providing two objects: a request (an <code className="language-text">http.IncomingMessage</code>object) and a response (an <code className="language-text">http.ServerResponse</code>object).
+                </p>
+                <p>
+                    Those 2 objects are essential to handle the HTTP call.
+                </p>
+                <p>
+                    In this case with:
+                </p>
+                <pre className="prism-code ">
+                    <div className="shell-box-top">
+                        <span>JS</span>
+                        <button type="button" className={tick ? "buttonticked" : ""} id="tickable" onClick={
+                            () => {
+                                copyCodeToClipboard();
+                                buttonTicked();
+                            }
+                        }>{tick ? "copied" : "copy"}</button>
+                    </div>
+                    <div className="token-line">
+                        <span className="token plain" id="copy">res.statusCode = <span className="token number">200</span> </span>
+                    </div>
+                    <div className="token-line">
+                        <span className="token blank"> </span>
+                    </div>
+                </pre>
 
 
             </div>
@@ -102,6 +164,39 @@ const Intro = () => {
 
                     </a>
 
+                </li>
+            </ul>
+            <div className="edit">
+                <a className="link" href="https://github.com/nodejs/nodejs.dev/edit/main/src/documentation/0004-node-javascript-language/index.md">
+                    <span>EDIT THIS PAGE ON GITHUB </span>
+                    <svg class="icon" fill="currentColor" height="1em" width="1em" viewBox="0 0 40 40"><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></svg>
+                </a>
+            </div>
+
+            <ul className="pagination">
+                <li>
+                    <Link class="link" rel="prev" to={'/'} onClick={
+                        () => {
+                            setIndex2("")
+                            setIndex(index)
+                            window.scrollTo({
+                                top: 0,
+                                behavior: "smooth"
+                            });
+
+                        }}>← &nbsp; Prev</Link>
+                </li>
+                <li>
+                    <Link class="link" rel="next" to={'/History'} onClick={
+                        () => {
+                            setIndex2("")
+                            setIndex(index + 1)
+                            window.scrollTo({
+                                top: 0,
+                                behavior: "smooth"
+                            });
+                        }}
+                    >Next &nbsp; →</Link>
                 </li>
             </ul>
         </>

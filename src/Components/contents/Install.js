@@ -1,6 +1,7 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
-const Install = () => {
+const Install = ({ index, setIndex, setIndex2 }) => {
     return (
         <>
             <h1 className="article-reader-headline">How to install Node.js</h1>
@@ -65,6 +66,32 @@ const Install = () => {
 
                     </a>
 
+                </li>
+            </ul>
+            <ul className="pagination">
+                <li>
+                    <Link class="link" rel="prev" to={'/History'} onClick={
+                        () => {
+                            setIndex2("")
+                            setIndex(index - 1)
+                            window.scrollTo({
+                                top: 0,
+                                behavior: "smooth"
+                            });
+
+                        }}>← &nbsp; Prev</Link>
+                </li>
+                <li>
+                    <Link class="link" rel="next" to={'/need'} onClick={
+                        () => {
+                            setIndex2("")
+                            setIndex(index + 1)
+                            window.scrollTo({
+                                top: 0,
+                                behavior: "smooth"
+                            });
+                        }}
+                    >Next &nbsp; →</Link>
                 </li>
             </ul>
 

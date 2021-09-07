@@ -662,6 +662,116 @@
      padding-bottom: 10px;
     
 }
+.prism-code {
+
+    background: #2c3437;
+    border-radius: 5px;
+    font-family: Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;
+
+}
+
+.shell-box-top {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+
+}
+
+.prism-code .shell-box-top span {
+
+           background-color:#d9e1e4;
+           border-radius: 0 0 .3rem .3rem;
+           color: #2c3437 ;
+           align-items: center;
+           display: inherit;
+           font-size: large;
+           font-weight: bolder;
+           justify-content: center;
+           width: 86px;
+           height: 25px;
+}
+
+.prism-code .shell-box-top button {
+
+       background-color: #215127;
+       border: 0 .3rem .3rem .3rem;
+       border-width: 0;
+       color: #fff;
+       cursor: pointer;
+       align-items: center;
+       display: inherit;
+       font-size: large;
+       justify-content: center;
+       width: 86px;
+       height: 25px;
+
+
+}
+.token-line   {
+
+     color: #e9edf0;
+     padding: 5px;
+     padding-left: 16px;
+
+}
+.token-line .number {
+
+    color: #dbbdf9 !important;
+
+       
+}
+.buttonticked::after {
+
+    content: url("../../images/tick.svg");
+    padding-left: 6px;
+    padding-top: 3px;
+}
+
+.needlist {
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif ;
+    font-weight: lighter;
+}
+
+.edit {
+
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 17px;
+}
+
+
+.link span {
+    vertical-align: middle;
+    font-size: medium;
+}
+.link svg {
+
+     font-size: medium;
+     padding-top: 3px;
+}
+.link span:hover , .link svg:hover {
+ 
+      color: #84ba64;
+     
+}
+
+.pagination {
+
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: space-between;
+         list-style: none;
+         
+         
+}
+.pagination .link {
+
+       font-size: medium;
+       padding-top: 50px;
+}
 
 
 

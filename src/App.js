@@ -24,10 +24,10 @@ function App() {
         <img className="logo2" src={Logo2} alt="NodeJs" ></img>
         <ul className="list">
           <li className='active'>Learn</li>
-          <li className="li" >Documentation</li>
-          <li className="li screen" >Docs</li>
-          <li className="li">Download</li>
-          <li className="li">Community</li>
+          <li className="li"><a href="https://nodejs.org/en/docs/">Documentation</a></li>
+          <li className="li screen" ><a href="https://nodejs.org/en/docs/">Docs</a></li>
+          <li className="li"><a href="https://nodejs.dev/download">Download</a></li>
+          <li className="li"><a href="https://nodejs.dev/community">Community</a></li>
         </ul>
         <button type="button" className="dark-mode-toggle " onClick={changeTheme}>
           <i className="material-icons light-mode-only theme-buttons"><NightsStayIcon /></i>
